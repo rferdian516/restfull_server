@@ -76,7 +76,7 @@ class Siswa extends RESTController
       ];
       $id = $this->put('id_nis', true);
       if ($id === null) {
-        $this->response(['status' => false, 'msg' => 'Masukan ID Pelanggan'], RestController::HTTP_BAD_REQUEST);
+        $this->response(['status' => false, 'msg' => 'Masukan ID/Nomor Induk Siswa'], RestController::HTTP_BAD_REQUEST);
       }
       $simpan = $this->siswa->update($id, $data);
       if ($simpan['status']) {
@@ -94,7 +94,7 @@ class Siswa extends RESTController
     {
       $id = $this->delete('id_nis', true);
       if ($id === null) {
-        $this->response(['status' => false, 'msg' => 'Masukan ID Pelanggan Data Yang akan di hapus'], RestController::HTTP_BAD_REQUEST);
+        $this->response(['status' => false, 'msg' => 'Masukan ID/Nomer Induk Siswa Data Yang akan di hapus'], RestController::HTTP_BAD_REQUEST);
       }
       $delete = $this->siswa->delete($id);
       if ($delete['status']) {
