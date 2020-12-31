@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Des 2020 pada 14.47
+-- Waktu pembuatan: 31 Des 2020 pada 09.19
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.2.12
 
@@ -21,6 +21,45 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_restfull_elearning`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_guru`
+--
+
+CREATE TABLE `tb_guru` (
+  `id_nip` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `jeniskel` varchar(255) NOT NULL,
+  `alamat` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_guru`
+--
+
+INSERT INTO `tb_guru` (`id_nip`, `nama`, `jeniskel`, `alamat`) VALUES
+('1231', 'BUDI', 'laki', 'malang');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_mapel`
+--
+
+CREATE TABLE `tb_mapel` (
+  `kode_mapel` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `kelas` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_mapel`
+--
+
+INSERT INTO `tb_mapel` (`kode_mapel`, `nama`, `kelas`) VALUES
+('310MTK', 'matematika', 'X');
 
 -- --------------------------------------------------------
 
@@ -43,11 +82,25 @@ CREATE TABLE `tb_siswa` (
 
 INSERT INTO `tb_siswa` (`id_nis`, `nama`, `jeniskel`, `tgl`, `kota`, `alamat`) VALUES
 ('1718141', 'Reynaldo', 'L', '1998-09-07', 'Malang', 'Polehan'),
+('1718990', 'User3', 'P', '1998-09-07', 'Sidoarjo', 'Candi'),
+('1718991', 'User3', 'P', '1998-09-07', 'Sidoarjo', 'Candi'),
 ('1718999', 'User Siswa', 'L', '1998-09-07', 'Surabaya', 'Waru');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `tb_guru`
+--
+ALTER TABLE `tb_guru`
+  ADD PRIMARY KEY (`id_nip`);
+
+--
+-- Indeks untuk tabel `tb_mapel`
+--
+ALTER TABLE `tb_mapel`
+  ADD PRIMARY KEY (`kode_mapel`);
 
 --
 -- Indeks untuk tabel `tb_siswa`
