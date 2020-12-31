@@ -14,9 +14,9 @@ class Mapel extends RESTController
 
     public function index_get()
     {
-        $id = $this->get('id');
+        $id = $this->get('kode_mapel');
         if ($id === null) {
-            $p = $this->get('id');
+            $p = $this->get('kode_mapel');
             $p = (empty($p)?1:$p);
             $jml_data = $this->mapel->count();
             $jml_page = ceil($jml_data/5);

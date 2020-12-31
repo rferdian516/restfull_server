@@ -12,7 +12,7 @@ class M_Mapel extends CI_Model {
   public function get($id = null, $limit = 5, $offset = 0)
   {
     if ($id === null) {
-      return $this->db->get('tb_mapel', $limit, $offset);
+      return $this->db->get('tb_mapel', $limit, $offset)->result_array();
     } else {
       return $this->db->get_where('tb_mapel', ['kode_mapel' => $id])->result_array();
     }

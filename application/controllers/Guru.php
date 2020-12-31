@@ -14,9 +14,9 @@ class Guru extends RESTController
 
     public function index_get()
     {
-        $id = $this->get('id');
+        $id = $this->get('id_nip');
         if ($id === null) {
-            $p = $this->get('id');
+            $p = $this->get('id_nip');
             $p = (empty($p)?1:$p);
             $jml_data = $this->guru->count();
             $jml_page = ceil($jml_data/5);

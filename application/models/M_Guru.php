@@ -11,7 +11,7 @@ class M_Guru extends CI_Model {
   public function get($id = null, $limit = 5, $offset = 0)
   {
     if ($id === null) {
-      return $this->db->get('tb_guru', $limit, $offset);
+      return $this->db->get('tb_guru', $limit, $offset)->result_array();
     } else {
       return $this->db->get_where('tb_guru', ['id_nip' => $id])->result_array();
     }

@@ -12,7 +12,7 @@ class M_Siswa extends CI_Model {
   public function get($id = null, $limit = 5, $offset = 0)
   {
     if ($id === null) {
-      return $this->db->get('tb_siswa', $limit, $offset);
+      return $this->db->get('tb_siswa', $limit, $offset)->result_array();
     } else {
       return $this->db->get_where('tb_siswa', ['id_nis' => $id])->result_array();
     }
